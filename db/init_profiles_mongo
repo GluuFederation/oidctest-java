@@ -1,0 +1,8 @@
+db.profiles.insert({name:"code", description:"code", code:"C"}); 
+db.profiles.insert({name:"code id_token", description:"code id_token", code:"CI"}); 
+db.profiles.insert({name:"code id_token token", description:"code id_token token", code:"CIT"}); 
+db.profiles.insert({name:"code token", description:"code token", code:"CT"}); 
+db.profiles.insert({name:"configuration", description:"configuration", code:"CNF"}); 
+db.profiles.insert({name:"dynamic", description:"dynamic", code:"DYN"}); 
+db.profiles.insert({name:"id_token", description:"id_token", code:"I"}); 
+db.profiles.insert({name:"id_token token", description:"id_token token", code:"IT"}); 
