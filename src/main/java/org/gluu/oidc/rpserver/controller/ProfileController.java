@@ -16,10 +16,10 @@ public class ProfileController {
 	private ProfileService profileService;
 	
     @RequestMapping(path = {"/", "/home"}, method = RequestMethod.GET)
-    public String home(Model model) {
+    public String showProfiles(Model model) {
     	List<Profile> profiles = profileService.findAll();
     	model.addAttribute("profiles", profiles);
     	
-        return "home";
+        return "profiles";
     }	
 }

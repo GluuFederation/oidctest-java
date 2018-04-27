@@ -1,0 +1,112 @@
+db.flows.insert(
+{
+  "name": "rp-3rd_party-init-login",
+  "group": "3rd-Party Init SSO",
+  "claims": "normal",
+  "behavior": [ "initiate_login_uri" ],
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Supports initiation of the SSO flow from a 3rd-party.",
+  "detailed_description": "Exposes a ${THIRD_PARTY_INITIATED_LOGIN} endpoint that 3rd parties can use to start the SSO process. Initiated via: https://&lt;rp_test_host&gt;:&lt;rp_test_port&gt;/rp/&lt;rp_id&gt;/rp-3rd_party-init-login/&lt;client_id&gt;",
+  "expected_result": "A successful Authentication Request to the OP triggered by accessing the ${THIRD_PARTY_INITIATED_LOGIN} URL."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-claims-aggregated",
+  "group": "Claims Types",
+  "claims": "aggregated",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can use Aggregated Claims",
+  "detailed_description": "Make a ${USERINFO_REQUEST} and read the ${AGGREGATED_CLAIMS}.",
+  "expected_result": "Understand the aggregated claims in the ${USERINFO_RESPONSE}."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-claims-distributed",
+  "group": "Claims Types",
+  "claims": "distributed",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can use Distributed Claims",
+  "detailed_description": "Make a ${USERINFO_REQUEST} and read the ${DISTRIBUTED_CLAIMS}.",
+  "expected_result": "Understand the distributed claims in the ${USERINFO_RESPONSE}."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-claims_request-id_token",
+  "group": "Claims Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can request and use claims in ID Token using the 'claims' request parameter",
+  "detailed_description": "Ask for the claim 'name' using the ${CLAIMS_REQUEST_PARAMETER}. Retrieve the claim from an ID Token, either by making a ${TOKEN_REQUEST} or by using ${IMPLICIT_FLOW}.",
+  "expected_result": "An ${ID_TOKEN} containing the requested claim."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-claims_request-userinfo",
+  "group": "Claims Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can request and use claims in UserInfo Response using the 'claims' request parameter",
+  "detailed_description": "Ask for the claim 'name' using the ${CLAIMS_REQUEST_PARAMETER}. Retrieve the claims by making a ${USERINFO_REQUEST}.",
+  "expected_result": "A ${USERINFO_RESPONSE} containing the requested claim."
+}
+);
+
+
+
+
+
+
+
+ 
+

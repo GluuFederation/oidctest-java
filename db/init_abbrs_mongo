@@ -1,0 +1,18 @@
+db.abbrs.insert({name:"code", code:"C"});
+db.abbrs.insert({name:"id_token", code:"I"});
+db.abbrs.insert({name:"id_token token", code:"IT"});
+db.abbrs.insert({name:"code id_token", code:"CI"});
+db.abbrs.insert({name:"code token", code:"CT"});
+db.abbrs.insert({name:"code id_token token", code:"CIT"});
+db.abbrs.insert({name:"dynamic", code:"DYN"});
+db.abbrs.insert({name:"configuration", code:"CNF"});
+
+
+
+
+
+
+
+
+ 
+

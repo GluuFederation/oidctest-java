@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class ProfileServiceImpl implements ProfileService {
 	@Autowired
 	private ProfileRepository profileRepository;
-	
+
 	@Override
 	public List<Profile> findAll() {
 		return profileRepository.findAll();

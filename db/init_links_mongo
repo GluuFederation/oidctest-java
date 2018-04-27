@@ -1,0 +1,86 @@
+db.links.insert({
+	name:"ACCESS_TOKEN_VALIDATION", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowTokenValidation",
+	code:"Access Token validation" });
+db.links.insert({
+	name:"ACCT_SYNTAX", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#AcctURISyntax",
+	code:"acct URI syntax" });
+db.links.insert({
+	name:"AGGREGATED_CLAIMS", 
+	url:"${AGGREGATED_DISTRIBUTED_CLAIMS_URL}",
+	code:"Aggregated Claims" });
+db.links.insert({
+	name:"AT_HASH", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#HybridIDToken",
+	code:"at_hash" });
+db.links.insert({
+	name:"AUD", 
+	url:"${ID_TOKEN_URL}",
+	code:"aud" });
+db.links.insert({
+	name:"AUTHORIZATION_CODE_FLOW", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth",
+	code:"Authorization Code Flow" });
+db.links.insert({
+	name:"AUTHORIZATION_CODE_VALIDATION", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#CodeValidation",
+	code:"Authorization Code Validation" });
+db.links.insert({
+	name:"BEARER_AUTH_SCHEME", 
+	url:"https://tools.ietf.org/html/rfc6750#section-2.1",
+	code:"\"Bearer\" authentication scheme" });
+ 
+db.links.insert({
+	name:"C_HASH", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#HybridIDToken",
+	code:"c_hash" });
+db.links.insert({
+	name:"CLAIMS_REQUEST_PARAMETER", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter",
+	code:"'claims' request parameter" });
+db.links.insert({
+	name:"CLIENT_ID", 
+	url:"https://openid.net/specs/openid-connect-registration-1_0.html#RegistrationResponse",
+	code:"client_id" });
+db.links.insert({
+	name:"CLIENT_METADATA", 
+	url:"https://openid.net/specs/openid-connect-registration-1_0.html#ClientMetadata",
+	code:"Client Metadata" });
+db.links.insert({
+	name:"CLIENT_REGISTRATION_ENDPOINT", 
+	url:"https://openid.net/specs/openid-connect-registration-1_0.html#ClientRegistration",
+	code:"client registration endpoint" });
+db.links.insert({
+	name:"CLIENT_REGISTRATION_RESPONSE", 
+	url:"https://openid.net/specs/openid-connect-registration-1_0.html#RegistrationResponse",
+	code:"Client Registration Response" });
+db.links.insert({
+	name:"CLIENT_SECRET_BASIC", 
+	url:"${CLIENT_AUTHENTICATION_URL",
+	code:"client_secret_basic" });
+db.links.insert({
+	name:"CLIENT_SECRET_JWT", 
+	url:"${CLIENT_AUTHENTICATION_URL}",
+	code:"client_secret_jwt" });				
+db.links.insert({
+	name:"CLIENT_SECRET_POST", 
+	url:"${CLIENT_AUTHENTICATION_URL}",
+	code:"client_secret_post" });
+db.links.insert({
+	name:"CODE_AUTHENTICATION_RESPONSE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#AuthResponse",
+	code:"authentication response" });
+db.links.insert({
+	name:"CODE_FLOW", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth",
+	code:"Code Flow" });
+db.links.insert({
+	name:"DISTRIBUTED_CLAIMS", 
+	url:"${AGGREGATED_DISTRIBUTED_CLAIMS_URL}",
+	code:"Distributed Claims" });	
+	
+db.links.insert({
+	name:"ACCESS_TOKEN_VALIDATION", 
+	url:"https",
+	code:"" });			

@@ -1,0 +1,22 @@
+db.groups.insert({name:"Discovery"});
+db.groups.insert({name:"Dynamic Client Registration"});
+db.groups.insert({name:"Response Type and Response Mode"});
+db.groups.insert({name:"claims Request Parameter"});
+db.groups.insert({name:"request_uri Request Parameter"});
+db.groups.insert({name:"scope Request Parameter"});
+db.groups.insert({name:"nonce Request Parameter"});
+db.groups.insert({name:"Client Authentication"});
+db.groups.insert({name:"ID Token"});
+db.groups.insert({name:"Key Rotation"});
+db.groups.insert({name:"Claims Types"});
+db.groups.insert({name:"UserInfo Endpoint"});
+db.groups.insert({name:"3rd-Party Init SSO"});
+
+
+
+
+
+
+
+ 
+

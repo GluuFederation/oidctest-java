@@ -1,0 +1,15 @@
+db.urls.insert({name:"AGGREGATED_DISTRIBUTED_CLAIMS_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#AggregatedDistributedClaims"});
+db.urls.insert({name:"CLIENT_AUTHENTICATION_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication"}); 
+db.urls.insert({name:"ID_TOKEN_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#IDToken"}); 
+db.urls.insert({name:"IMPLICIT_FLOW_ID_TOKEN_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#ImplicitIDToken"}); 
+db.urls.insert({name:"JWT_REQUESTS_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#JWTRequests"}); 
+db.urls.insert({name:"ROTATE_SIGNING_KEY_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys"});
+db.urls.insert({name:"SIGNING_URL", url:"https://openid.net/specs/openid-connect-core-1_0.html#Signing"});  
+
+
+
+
+
+
+ 
+
