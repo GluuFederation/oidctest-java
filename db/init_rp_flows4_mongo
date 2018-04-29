@@ -1,0 +1,257 @@
+
+db.flows.insert(
+{
+  "name": "rp-scope-userinfo-claims",
+  "MTI": [
+    "C",
+    "I",
+    "IT",
+    "CI",
+    "CT",
+    "CIT"
+  ],
+  "group": "scope Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can request and use claims using scope values",
+  "detailed_description": "${REQUEST_CLAIMS_USING_SCOPE_VALUES}.",
+  "expected_result": "A ${USERINFO_RESPONSE} containing the requested claims. If no access token is issued (when using ${IMPLICIT_FLOW} with response_type='id_token') the ${ID_TOKEN} contains the requested claims."
+}
+);
+
+
+
+db.flows.insert(
+{
+  "name": "rp-token_endpoint-client_secret_basic",
+  "MTI": [
+    "C",
+    "CI",
+    "CT",
+    "CIT"
+  ],
+  "group": "Client Authentication",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can make Access Token Request with 'client_secret_basic' authentication",
+  "detailed_description": "Use the '${CLIENT_SECRET_BASIC}' method to authenticate at the Authorization Server when using the token endpoint.",
+  "expected_result": "A ${TOKEN_RESPONSE}, containing an ID token."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-token_endpoint-client_secret_jwt",
+  "group": "Client Authentication",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "code id_token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can make Access Token Request with 'client_secret_jwt' authentication",
+  "detailed_description": "Use the '${CLIENT_SECRET_JWT}' method to authenticate at the Authorization Server when using the token endpoint.",
+  "expected_result": "A ${TOKEN_RESPONSE}, containing an ID token."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-token_endpoint-client_secret_post",
+  "group": "Client Authentication",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "code id_token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can make Access Token Request with 'client_secret_post' authentication",
+  "detailed_description": "Use the '${CLIENT_SECRET_POST}' method to authenticate at the Authorization Server when using the token endpoint.",
+  "expected_result": "A ${TOKEN_RESPONSE}, containing an ID token."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-token_endpoint-private_key_jwt",
+  "group": "Client Authentication",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "code id_token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can make Access Token Request with 'private_key_jwt' authentication",
+  "detailed_description": "Use the '${PRIVATE_KEY_JWT}' method to authenticate at the Authorization Server when using the token endpoint.",
+  "expected_result": "A ${TOKEN_RESPONSE}, containing an ID token."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-userinfo-bad-sub-claim",
+  "MTI": [
+    "C",
+    "IT",
+    "CI",
+    "CT",
+    "CIT"
+  ],
+  "group": "UserInfo Endpoint",
+  "behavior": ["uisub"],
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Rejects UserInfo Response with invalid 'sub' claim",
+  "detailed_description": "Make a ${USERINFO_REQUEST} and verify the 'sub' value of the ${USERINFO_RESPONSE} by ${USER_INFO_SUB_CLAIM}.",
+  "expected_result": "Identify the invalid 'sub' value and reject the UserInfo Response."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-userinfo-bearer-body",
+  "group": "UserInfo Endpoint",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can send Access Token as form-encoded body parameter",
+  "detailed_description": "Pass the access token as a ${FORM_ENCODED_BODY_PARAMETER} while doing the ${USERINFO_REQUEST}.",
+  "expected_result": "A ${USERINFO_RESPONSE}."
+}
+);
+ 
+ 
+db.flows.insert(
+{
+  "name": "rp-userinfo-bearer-header",
+  "MTI": [
+    "C",
+    "IT",
+    "CI",
+    "CT",
+    "CIT"
+  ],
+  "group": "UserInfo Endpoint",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can send Access Token in the HTTP Authorization request header",
+  "detailed_description": "Pass the access token using the ${BEARER_AUTH_SCHEME} while doing the ${USERINFO_REQUEST}.",
+  "expected_result": "A ${USERINFO_RESPONSE}."
+}
+); 
+
+
+db.flows.insert(
+{
+  "name": "rp-userinfo-enc",
+  "group": "UserInfo Endpoint",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can request and use encrypted UserInfo Response",
+  "detailed_description": "Request encrypted UserInfo. Decrypt the ${USERINFO_RESPONSE}.",
+  "expected_result": "A ${USERINFO_RESPONSE}."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-userinfo-sig",
+  "MTI": [
+    "DYN"
+  ],
+  "group": "UserInfo Endpoint",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can request and use signed UserInfo Response",
+  "detailed_description": "Request signed UserInfo.",
+  "expected_result": "Successful signature verification of the ${USERINFO_RESPONSE}."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-userinfo-sig+enc",
+  "group": "UserInfo Endpoint",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can request and use signed and encrypted UserInfo Response",
+  "detailed_description": "Request signed and encrypted UserInfo. Decrypt the ${USERINFO_RESPONSE} and verify its signature.",
+  "expected_result": "Successful decryption and signature verification of the ${USERINFO_RESPONSE}."
+}
+);

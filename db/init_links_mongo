@@ -81,6 +81,194 @@ db.links.insert({
 	code:"Distributed Claims" });	
 	
 db.links.insert({
-	name:"ACCESS_TOKEN_VALIDATION", 
-	url:"https",
-	code:"" });			
+	name:"ENCRYPT_THE_REQUEST_OBJECT", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#EncryptedRequestObject",
+	code:"Encrypt the Request Object" });
+db.links.insert({
+	name:"ENCRYPTED_REQUEST", 
+	url:"${JWT_REQUESTS_URL}",
+	code:"encrypted authentication request" });	
+db.links.insert({
+	name:"FORM_ENCODED_BODY_PARAMETER", 
+	url:"https://tools.ietf.org/html/rfc6750#section-2.2",
+	code:"form-encoded body parameter" });	
+db.links.insert({
+	name:"FORM_POST", 
+	url:"https://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html#FormPostResponseMode",
+	code:"form_post" });
+db.links.insert({
+	name:"HYBRID_FLOW", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#HybridFlowAuth",
+	code:"Hybrid Flow" });	
+db.links.insert({
+	name:"HYBRID_FLOW_ID_TOKEN", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#HybridIDToken",
+	code:"hybrid flow" });	
+db.links.insert({
+	name:"IAT", 
+	url:"${ID_TOKEN_URL}",
+	code:"iat" });
+	
+db.links.insert({
+	name:"ID_TOKEN", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#IDToken",
+	code:"ID Token" });	
+db.links.insert({
+	name:"ID_TOKEN_IMPLICIT_FLOW", 
+	url:"${IMPLICIT_FLOW_ID_TOKEN_URL}",
+	code:"ID Token" });	
+db.links.insert({
+	name:"ID_TOKEN_VALIDATION", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation",
+	code:"ID Token validation" });	
+db.links.insert({
+	name:"IMPLICIT_AUTHENTICATION_RESPONSE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthResponse",
+	code:"authentication response" });	
+db.links.insert({
+	name:"IMPLICIT_FLOW", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth",
+	code:"Implicit Flow" });	
+db.links.insert({
+	name:"IMPLICIT_FLOW_ID_TOKEN", 
+	url:"${IMPLICIT_FLOW_ID_TOKEN_URL}",
+	code:"implicit flow" });	
+db.links.insert({
+	name:"ISS", 
+	url:"${ID_TOKEN_URL}",
+	code:"iss" });	
+db.links.insert({
+	name:"ISSUER_DISCOVERY_DOC", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#IssuerDiscovery",
+	code:"OpenID Provider Issuer Discovery" });	
+db.links.insert({
+	name:"JSON_WEB_KEY_SET_FORMAT", 
+	url:"https://tools.ietf.org/html/rfc7517#section-5",
+	code:"JSON Web Key Set [JWK Set) Format" });	
+db.links.insert({
+	name:"MULITPLE_KEYS_JWKS", 
+	url:"${SIGNING_URL}",
+	code:"multiple keys in its JWK Set document" });	
+db.links.insert({
+	name:"NONCE_IMPLEMENTATION", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes",
+	code:"'nonce' value" });	
+db.links.insert({
+	name:"OPENID_CONFIGURATION_INFORMATION", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig",
+	code:"OpenID Provider Configuration Information" });	
+db.links.insert({
+	name:"OPENID_PROVIDER_ISSUER_DISCOVERY", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#IssuerDiscovery",
+	code:"OpenID Provider Issuer Discovery" });	
+	
+db.links.insert({
+	name:"OPENID_PROVIDER_METADATA", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata",
+	code:"OpenID Provider Metadata" });	
+db.links.insert({
+	name:"OPENID_SCOPE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest",
+	code:"openid scope" });	
+db.links.insert({
+	name:"PRIVATE_KEY_JWT", 
+	url:"${CLIENT_AUTHENTICATION_URL}",
+	code:"private_key_jwt" });															
+db.links.insert({
+	name:"PROVIDER_CONFIGURATION", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata",
+	code:"provider configuration" });	
+db.links.insert({
+	name:"REQUEST_CLAIMS_USING_SCOPE_VALUES", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims",
+	code:"Request claims using scope values" });	
+db.links.insert({
+	name:"REQUEST_OBJECT_BY_REFERENCE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#RequestUriParameter",
+	code:"Request Object by Reference" });		
+db.links.insert({
+	name:"RESPONSE_MODE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest",
+	code:"response mode" });	
+db.links.insert({
+	name:"RESPONSE_TYPE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthRequest",
+	code:"response_type" });	
+db.links.insert({
+	name:"RFC7033", 
+	url:"https://tools.ietf.org/html/rfc7033#section-7",
+	code:"RFC7033" });		
+db.links.insert({
+	name:"ROTATE_ENCRYPTION_KEYS", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#RotateEncKeys",
+	code:"Rotate the encryption keys" });	
+db.links.insert({
+	name:"ROTATE_SIGNING_KEYS", 
+	url:"${ROTATE_SIGNING_KEY_URL}",
+	code:"Rotate the signing keys" });	
+db.links.insert({
+	name:"SELF_ISSUED_AUTH_RESPONSE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#SelfIssuedResponse",
+	code:"authentication response" });		
+db.links.insert({
+	name:"SELF_ISSUED_ID_TOKEN", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#SelfIssuedValidation",
+	code:"Self-Issued ID Token" });	
+db.links.insert({
+	name:"SELF_ISSUED_OPENID_PROVIDERS", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#SelfIssued",
+	code:"Self-Issued OpenID Provider" });	
+db.links.insert({
+	name:"SIGN_THE_REQUEST_OBJECT", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#SignedRequestObject",
+	code:"Sign the Request Object" });		
+	
+db.links.insert({
+	name:"SIGNED_REQUEST", 
+	url:"${JWT_REQUESTS_URL}",
+	code:"signed authentication request" });	
+db.links.insert({
+	name:"SIGNING_KEY_ROTATION", 
+	url:"${ROTATE_SIGNING_KEY_URL}",
+	code:"rotated signing keys" });	
+db.links.insert({
+	name:"SUB", 
+	url:"${ID_TOKEN_URL}",
+	code:"sub" });
+db.links.insert({
+	name:"SYMMETRIC_SIGNATURES", 
+	url:"${SIGNING_URL}",
+	code:"'client_secret' as MAC key" });	
+db.links.insert({
+	name:"THIRD_PARTY_INITIATED_LOGIN", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#ThirdPartyInitiatedLogin",
+	code:"third-party initiated login" });	
+db.links.insert({
+	name:"TOKEN_REQUEST", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#TokenRequest",
+	code:"Token Request" });	
+db.links.insert({
+	name:"TOKEN_RESPONSE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#TokenResponse",
+	code:"Token Response" });	
+db.links.insert({
+	name:"UNSECURED_JWS", 
+	url:"https://tools.ietf.org/html/rfc7518#section-3.6",
+	code:"Unsecured JWS" });	
+db.links.insert({
+	name:"URL_SYNTAX", 
+	url:"https://openid.net/specs/openid-connect-discovery-1_0.html#URLSyntax",
+	code:"URL syntax" });		
+db.links.insert({
+	name:"USERINFO_REQUEST", 
+	url:"https://openid.net/specs/openid-connect-standard-1_0-21.html#UserInfoRequest",
+	code:"UserInfo Request" });	
+db.links.insert({
+	name:"USERINFO_RESPONSE", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#UserInfo",
+	code:"UserInfo Response" });	
+db.links.insert({
+	name:"USER_INFO_SUB_CLAIM", 
+	url:"https://openid.net/specs/openid-connect-core-1_0.html#UserInfoResponse",
+	code:"comparing it with the ID Token's 'sub' value" });												
+	

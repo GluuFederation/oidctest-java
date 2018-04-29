@@ -1,0 +1,345 @@
+
+db.flows.insert(
+{
+  "name": "rp-discovery-issuer-not-matching-config",
+  "MTI": [
+    "CNF",
+    "DYN"
+  ],
+  "group": "Discovery",
+  "behavior": ["isso"],
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Rejects discovered issuer not matching provider configuration issuer",
+  "detailed_description": "Retrieve ${OPENID_CONFIGURATION_INFORMATION} for OpenID Provider from the .well-known/openid-configuration path. Verify that the issuer in the ${PROVIDER_CONFIGURATION}  matches the one returned by WebFinger.",
+  "expected_result": "Identify that the issuers are not matching and reject the provider configuration."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-discovery-jwks_uri-keys",
+  "MTI": [
+    "CNF",
+    "DYN"
+  ],
+  "group": "Discovery",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Uses keys discovered with jwks_uri value",
+  "detailed_description": "The Relying Party uses keys from the jwks_uri which has been obtained from the ${OPENID_PROVIDER_METADATA}.",
+  "expected_result": "Should be able to verify signed responses and/or encrypt requests using obtained keys."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-discovery-openid-configuration",
+  "MTI": [
+    "CNF",
+    "DYN"
+  ],
+  "group": "Discovery",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Uses Provider Configuration Information",
+  "detailed_description": "Retrieve and use the ${OPENID_CONFIGURATION_INFORMATION}.",
+  "expected_result": "Read and use the JSON object returned from the OpenID Connect Provider."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-discovery-webfinger-acct",
+  "MTI": [
+    "DYN"
+  ],
+  "group": "Discovery",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can discover OpenID providers using acct URI syntax",
+  "detailed_description": "Use WebFinger (${RFC7033}) and ${ISSUER_DISCOVERY_DOC} to determine the location of the OpenID Provider. The discovery should be done using ${ACCT_SYNTAX} as user input identifier. Note that the local part of the acct value should adhere to the pattern <oper_id>.<test_id>",
+  "expected_result": "An issuer location should be returned."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-discovery-webfinger-http-href",
+  "group": "Discovery",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_decription" : "Complain about href as http URL",
+  "detailed_description": "href URLs must be HTTPS",
+  "expected_result": "Complain about return URL being http"
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-discovery-webfinger-unknown-member",
+  "group": "Discovery",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_decription" : "Webfinger may return a response with to the client unknown members",
+  "detailed_description": "The webfinger response will contain a member that the client doesn't recognize",
+  "expected_result": "An issuer location should be returned."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-discovery-webfinger-url",
+  "MTI": [
+    "DYN"
+  ],
+  "group": "Discovery",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can discover OpenID providers using URL syntax",
+  "detailed_description": "Use WebFinger (${RFC7033}) and ${ISSUER_DISCOVERY_DOC} to determine the location of the OpenID Provider. The discovery should be done using ${URL_SYNTAX} as user input identifier.",
+  "expected_result": "An issuer location should be returned."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-id_token-aud",
+  "MTI": [
+    "C",
+    "I",
+    "IT",
+    "CI",
+    "CT",
+    "CIT"
+  ],
+  "group": "ID Token",
+  "behavior": ["aud"],
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Rejects ID Token with invalid 'aud' claim",
+  "detailed_description": "Request an ID token and compare its ${AUD} value to the Relying Party's '${CLIENT_ID}'.",
+  "expected_result": "Identify that the 'aud' value is missing or doesn't match the 'client_id' and reject the ID Token after doing ${ID_TOKEN_VALIDATION}."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-id_token-bad-at_hash",
+  "MTI": [
+    "IT",
+    "CIT"
+  ],
+  "behavior": ["ath"],
+  "group": "ID Token",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "id_token token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Rejects ID Token with incorrect 'at_hash' claim when response_type='id_token token'",
+  "detailed_description": "Make an authentication request using response_type='id_token token' for ${IMPLICIT_FLOW} or response_type='code id_token token' for ${HYBRID_FLOW}. Verify the 'at_hash' value in the returned ${ID_TOKEN}.",
+  "expected_result": "Identify the incorrect 'at_hash' value and reject the ID Token after doing ${ACCESS_TOKEN_VALIDATION}."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-id_token-bad-c_hash",
+  "MTI": [
+    "CI",
+    "CIT"
+  ],
+  "behavior": ["ch"],
+  "group": "ID Token",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code id_token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Rejects ID Token with incorrect 'c_hash' claim when hybrid flow is used",
+  "detailed_description": "Retrieve Authorization Code and ID Token from the Authorization Endpoint, using ${HYBRID_FLOW}. Verify the ${C_HASH} value in the returned ID token. 'id_token_signed_response_alg' must NOT be 'none'",
+  "expected_result": "Identify the incorrect 'c_hash' value and reject the ID Token after doing ${AUTHORIZATION_CODE_VALIDATION}."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-id_token-bad-sig-es256",
+  "behavior": ["idts"],
+  "group": "ID Token",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "id_token_signing_alg_values_supported": [
+      "ES256"
+    ]
+  },
+  "short_description": "Rejects ID Token with invalid asymmetric 'ES256' signature",
+  "detailed_description": "Request an ID token and verify its signature using the keys provided by the Issuer.",
+  "expected_result": "Identify the invalid signature and reject the ID Token after doing ${ID_TOKEN_VALIDATION}."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-id_token-bad-sig-hs256",
+  "behavior": ["idts"],
+  "claims": "normal",
+  "group": "ID Token",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "id_token_signing_alg_values_supported": [
+      "HS256"
+    ]
+  },
+  "short_description": "Rejects ID Token with invalid symmetric 'HS256' signature",
+  "detailed_description": "Request an ID token and verify its signature using the ${SYMMETRIC_SIGNATURES}.",
+  "expected_result": "Identify the invalid signature and reject the ID Token after doing ${ID_TOKEN_VALIDATION}."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-id_token-bad-sig-rs256",
+  "MTI": [
+    "C",
+    "I",
+    "IT",
+    "CI",
+    "CT",
+    "CIT"
+  ],
+  "behavior": ["idts"],
+  "group": "ID Token",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "id_token_signing_alg_values_supported": [
+      "RS256"
+    ]
+  },
+  "short_description": "Rejects ID Token with invalid asymmetric 'RS256' signature",
+  "detailed_description": "Request an ID token and verify its signature using the keys provided by the Issuer.",
+  "expected_result": "Identify the invalid signature and reject the ID Token after doing ${ID_TOKEN_VALIDATION}."
+}
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

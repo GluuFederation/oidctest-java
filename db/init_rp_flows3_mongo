@@ -1,0 +1,271 @@
+
+db.flows.insert(
+{
+  "name": "rp-registration-dynamic",
+  "MTI": [
+    "DYN"
+  ],
+  "group": "Dynamic Client Registration",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Uses dynamic registration",
+  "detailed_description": "Use the ${CLIENT_REGISTRATION_ENDPOINT} in order to dynamically register the Relying Party.",
+  "expected_result": "Get a ${CLIENT_REGISTRATION_RESPONSE}."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-request_uri-enc",
+  "group": "request_uri Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can use request_uri request parameter with encrypted request",
+  "detailed_description": "Pass a ${REQUEST_OBJECT_BY_REFERENCE}, using the request_uri parameter. ${ENCRYPT_THE_REQUEST_OBJECT} using the 'RSA1_5' and 'A128CBC-HS256' algorithms.",
+  "expected_result": "An authentication response to the encrypted request passed using the request_uri request parameter."
+}
+);
+
+
+
+db.flows.insert(
+{
+  "name": "rp-request_uri-sig",
+  "MTI": [
+    "DYN"
+  ],
+  "group": "request_uri Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can use request_uri request parameter with signed request",
+  "detailed_description": "Pass a ${REQUEST_OBJECT_BY_REFERENCE}, using the request_uri parameter. ${SIGN_THE_REQUEST_OBJECT} using the 'RS256' algorithm.",
+  "expected_result": "An authentication response to the signed request passed using the request_uri request parameter."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-request_uri-sig+enc",
+  "group": "request_uri Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can use request_uri request parameter with signed and encrypted request",
+  "detailed_description": "Pass a ${REQUEST_OBJECT_BY_REFERENCE}, using the request_uri parameter. ${SIGN_THE_REQUEST_OBJECT} using the 'RS256' algorithm, then ${ENCRYPT_THE_REQUEST_OBJECT} using the 'RSA1_5' and 'A128CBC-HS256' algorithms.",
+  "expected_result": "An authentication response to the signed and encrypted request passed using the request_uri request parameter."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-request_uri-unsigned",
+  "MTI": [
+    "DYN"
+  ],
+  "group": "request_uri Request Parameter",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code",
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can use request_uri request parameter with unsigned request",
+  "detailed_description": "Pass a ${REQUEST_OBJECT_BY_REFERENCE}, using the request_uri parameter. The Request Object should be signed using the algorithm 'none' (${UNSECURED_JWS}).",
+  "expected_result": "An authentication response to the unsigned request passed using the request_uri request parameter."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-response_mode-form_post",
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "id_token",
+      "id_token token",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can make request using response_type='id_token token' and response_mode='form_post'",
+  "detailed_description": "Make an authentication request with the ${RESPONSE_TYPE} set to 'id_token token' and the ${RESPONSE_MODE} set to ${FORM_POST}.",
+  "expected_result": "HTML form post response processed, resulting in query encoded parameters."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-response_type-code",
+  "MTI": [
+    "C"
+  ],
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code"
+    ]
+  },
+  "short_description": "Can make request using response_type 'code'",
+  "detailed_description": "Make an authentication request using the ${AUTHORIZATION_CODE_FLOW}.",
+  "expected_result": "An ${CODE_AUTHENTICATION_RESPONSE} containing an authorization code."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-response_type-code+id_token",
+  "MTI": [
+    "CI"
+  ],
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code id_token"
+    ]
+  },
+  "short_description": "Can make request using response_type 'code id_token'",
+  "detailed_description": "Make an authentication request using the ${HYBRID_FLOW}, specifying the ${RESPONSE_TYPE} as 'code id_token'",
+  "expected_result": "An ${IMPLICIT_AUTHENTICATION_RESPONSE} containing an ${ID_TOKEN} and an Authorization Code."
+}
+);
+
+
+db.flows.insert(
+{
+  "name": "rp-response_type-code+id_token+token",
+  "MTI": [
+    "CIT"
+  ],
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code id_token token"
+    ]
+  },
+  "short_description": "Can make request using response_type 'code id_token token'",
+  "detailed_description": "Make an authentication request using the ${HYBRID_FLOW}, specifying the ${RESPONSE_TYPE} as 'code id_token token'",
+  "expected_result": "An ${IMPLICIT_AUTHENTICATION_RESPONSE} containing an authorization code, an ${ID_TOKEN} and an Access Token."
+}
+);
+
+
+
+db.flows.insert(
+{
+  "name": "rp-response_type-code+token",
+  "MTI": [
+    "CT"
+  ],
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "code token"
+    ]
+  },
+  "short_description": "Can make request using response_type 'code token'",
+  "detailed_description": "Make an authentication request using the ${HYBRID_FLOW}, specifying the ${RESPONSE_TYPE} as 'code token'",
+  "expected_result": "An ${IMPLICIT_AUTHENTICATION_RESPONSE} containing an authorization code and an Access Token."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-response_type-id_token",
+  "MTI": [
+    "I"
+  ],
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "id_token"
+    ]
+  },
+  "short_description": "Can make request using response_type 'id_token'",
+  "detailed_description": "Make an authentication request using the ${IMPLICIT_FLOW}, specifying the ${RESPONSE_TYPE} as 'id_token'.",
+  "expected_result": "An ${IMPLICIT_AUTHENTICATION_RESPONSE} containing an ${ID_TOKEN}."
+}
+);
+
+db.flows.insert(
+{
+  "name": "rp-response_type-id_token+token",
+  "MTI": [
+    "IT"
+  ],
+  "group": "Response Type and Response Mode",
+  "claims": "normal",
+  "capabilities": {
+    "response_types_supported": [
+      "id_token token"
+    ]
+  },
+  "short_description": "Can make request using response_type 'id_token token'",
+  "detailed_description": "Make an authentication request using the ${IMPLICIT_FLOW}, specifying the ${RESPONSE_TYPE} as 'id_token token'",
+  "expected_result": "An ${IMPLICIT_AUTHENTICATION_RESPONSE} containing an ${ID_TOKEN} and an Access Token."
+}
+);
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
