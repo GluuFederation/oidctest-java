@@ -4,13 +4,15 @@ public class Test {
 	private String testID;
 	private String description;
 	private String info;
+	private String group;
 	
 	public Test() { }
 	
-	public Test(String testID, String description, String info) {
+	public Test(String testID, String description, String info, String group) {
 		this.testID = testID;
 		this.description = description;
 		this.info = info;
+		this.group = group;
 	}
 	
 	public String getTestID() {
@@ -37,9 +39,17 @@ public class Test {
 		this.info = info;
 	}
 
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
 	@Override
 	public String toString() {
-		return "Test [testID=" + testID + ", description=" + description + ", info=" + info + "]";
+		return "Test [testID=" + testID + ", description=" + description + ", info=" + info + ", group=" + group + "]";
 	}
 	
 }

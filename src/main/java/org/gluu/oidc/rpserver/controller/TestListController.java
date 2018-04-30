@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TestListController {
@@ -14,9 +15,10 @@ public class TestListController {
 	private TestService testService;
 	
     @RequestMapping(path = "/tests", method = RequestMethod.GET)
-    public String showTests(Model model) {
-    	TestList testList = testService.getTestList();
-    	
+    public String showTests(@RequestParam("p") String profile, Model model) {
+    	TestList testList = testService.getTestList(profile);
+    	model.addAttribute("testList", testList);
+
         return "tests";
     }
 }

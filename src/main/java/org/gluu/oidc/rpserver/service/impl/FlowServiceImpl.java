@@ -14,8 +14,8 @@ public class FlowServiceImpl implements FlowService {
 	private FlowRepository flowRepository;
 	
 	@Override
-	public List<Flow> findAll() {
-		return flowRepository.findAll();
+	public List<Flow> findRPFlows() {
+		return flowRepository.findRPFlows();
 	}
 
 }

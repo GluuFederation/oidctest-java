@@ -57,7 +57,7 @@ db.links.insert({
 	code:"Client Registration Response" });
 db.links.insert({
 	name:"CLIENT_SECRET_BASIC", 
-	url:"${CLIENT_AUTHENTICATION_URL",
+	url:"${CLIENT_AUTHENTICATION_URL}",
 	code:"client_secret_basic" });
 db.links.insert({
 	name:"CLIENT_SECRET_JWT", 

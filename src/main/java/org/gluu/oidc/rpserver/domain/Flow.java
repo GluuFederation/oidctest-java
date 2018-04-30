@@ -13,7 +13,7 @@ public class Flow {
     public String id;
     
 	private String name;
-    @Field("mti")
+    @Field("MTI")
 	private List<String> mtiItems;
 	private String group;
 	private List<String> behaviours; 

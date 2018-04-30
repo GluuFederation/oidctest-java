@@ -4,16 +4,20 @@ import java.util.List;
 import java.util.Map;
 
 public class TestList {
+	private String header;
 	private Map<String, List<Test>> mandatoryTests;
 	private Map<String, List<Test>> optionalTests;
 
 	public TestList() {}
-
-	public TestList(Map<String, List<Test>> mandatoryTests, Map<String, List<Test>> optionalTests) {
-		this.mandatoryTests = mandatoryTests;
-		this.optionalTests = optionalTests;
-	}
 	
+	public String getHeader() {
+		return header;
+	}
+
+	public void setHeader(String header) {
+		this.header = header;
+	}
+
 	public Map<String, List<Test>> getMandatoryTests() {
 		return mandatoryTests;
 	}
@@ -32,8 +36,9 @@ public class TestList {
 
 	@Override
 	public String toString() {
-		return "TestList [mandatoryTests=" + mandatoryTests + ", optionalTests=" + optionalTests + "]";
-	}	
-	
+		return "TestList [header=" + header + ", mandatoryTests=" + mandatoryTests + ", optionalTests=" + optionalTests
+				+ "]";
+	}
+
 	
 }

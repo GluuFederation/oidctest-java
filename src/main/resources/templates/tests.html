@@ -34,13 +34,21 @@
            		<h3 class="panel-title">Mandatory</h3>
             </div>
            	<div class="panel-body">        
-		        <table class="table table-hover table-bordered table-condensed">
-		        	<tr><th>Test ID</th><th>Description</th><th>Info2</th></tr>
-		            <tr><td style="white-space:nowrap">21a</td><td>22a</td><td>23a</td></tr>
-		            <tr><td style="white-space:nowrap">31a</td><td>32a</td><td>33a</td></tr>
-		        	<tr style><td colspan="3" class="text-center info"><b>grp0</b></td></tr>
-		            <tr><td style="white-space:nowrap">41a</td><td>42a</td><td>43a</td></tr>
-		            <tr><td style="white-space:nowrap">51a</td><td>52a</td><td>53a</td></tr> 
+		        <table>
+		            <tr th:each="group : ${testList.mandatoryTests}">
+		                <td colspan="3">
+		                <table width="100%" class="table table-hover table-bordered table-condensed">
+		                	<tr><td colspan="3" class="text-center info"><b th:text="${group.key}">grp0</b></td></tr>
+		                    <tr><th width="30%">Test ID</th><th width="30%">Description</th><th width="40%">Info</th></tr>
+		                    
+		                    <tr th:each="test : ${group.value}">
+		                        <td width="30%" style="white-space:nowrap" th:utext="${test.testID}">Some name</td>
+		                        <td width="30%" th:utext="${test.description}">Some name</td>
+		                        <td width="40%" th:utext="${test.info}">Some name</td>
+		                    </tr>
+		                </table>
+		                </td>
+		            </tr>
 		         </table>           
              </div>
           </div>
@@ -50,14 +58,22 @@
                 <h3 class="panel-title">Optional</h3>
              </div>
 	         <div class="panel-body">
-		        <table class="table table-hover table-bordered table-condensed">
-		        	<tr><th>Test ID</th><th>Description</th><th>Info2</th></tr>
-		            <tr><td style="white-space:nowrap">21</td><td>22</td><td>23</td></tr>
-		            <tr><td style="white-space:nowrap">31</td><td>32</td><td>33</td></tr>
-		        	<tr style><td colspan="3" class="text-center info"><b>grp0</b></td></tr>
-		            <tr><td style="white-space:nowrap">41</td><td>42</td><td>43</td></tr>
-		            <tr><td style="white-space:nowrap">51</td><td>52</td><td>53</td></tr> 
-		         </table>          
+		        <table>
+		            <tr th:each="group : ${testList.optionalTests}">
+		                <td colspan="3">
+		                <table width="100%" class="table table-hover table-bordered table-condensed">
+		                	<tr><td colspan="3" class="text-center info"><b th:text="${group.key}">grp0</b></td></tr>
+		                    <tr><th width="30%">Test ID</th><th width="30%">Description</th><th width="40%">Info</th></tr>
+		                    
+		                    <tr th:each="test : ${group.value}">
+		                        <td width="30%" style="white-space:nowrap" th:utext="${test.testID}">Some name</td>
+		                        <td width="30%" th:utext="${test.description}">Some name</td>
+		                        <td width="40%" th:utext="${test.info}">Some name</td>
+		                    </tr>
+		                </table>
+		                </td>
+		            </tr>
+		         </table>           
 	          </div>
           </div>
           
