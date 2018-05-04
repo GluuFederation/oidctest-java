@@ -64,17 +64,16 @@
 			<hr />
 			<div class="pull-left">
 				<ul class="list-inline">
-					<li>(C) 2017-2018 - <a href="https://openid.net/foundation">OpenID
-							Foundation</a></li>
-					<li>E-mail: <a href="mailto:certification@oidf.org">certification@oidf.org</a></li>
+					<li>${info.copyright} - <a href="${info.orgUrl}">${info.orgName}</a></li>
+					<li>E-mail: <a href="mailto:${info.email}">${info.email}</a></li>
 					<li>Issues: <a
-						href="https://github.com/openid-certification/oidctest/issues">Github</a>
+						href="${info.issuesHostUrl">${info.issuesHostName}</a>
 					<li>
 				</ul>
 			</div>
 			<div class="pull-right">
 				<ul class="list-inline">
-					<li>Version: <span th:text="${appVersion}"></span></li>
+					<li>Version: <span th:text="${info.appVersion}"></span></li>
 				</ul>
 			</div>
 		</div>
