@@ -3,7 +3,6 @@ package org.gluu.oidc.rpserver.service.impl;
 import java.util.List;
 
 import org.gluu.oidc.rpserver.domain.Group;
-import org.gluu.oidc.rpserver.domain.Profile;
 import org.gluu.oidc.rpserver.repository.GroupRepository;
 import org.gluu.oidc.rpserver.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -64,10 +64,9 @@
 			<hr />
 			<div class="pull-left">
 				<ul class="list-inline">
-					<li>${info.copyright} - <a href="${info.orgUrl}">${info.orgName}</a></li>
-					<li>E-mail: <a href="mailto:${info.email}">${info.email}</a></li>
-					<li>Issues: <a
-						href="${info.issuesHostUrl">${info.issuesHostName}</a>
+					<li><span th:text="${info.copyright}">copyright</span> - <a th:href="${info.orgUrl}" th:text="${info.orgName}">org</a></li>
+					<li>E-mail: <a th:href="${info.email}" th:text="${info.emailTo}">email</a></li>
+					<li>Issues: <a th:href="${info.issuesHostUrl}" th:text="${info.issuesHostName}">issues</a>
 					<li>
 				</ul>
 			</div>

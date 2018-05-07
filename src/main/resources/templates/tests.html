@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,11 +28,16 @@
                     class="img-responsive" src="images/logo.png" /></a>
             </div>
             <div class="clearfix"></div>
+            
         </div>
-        
+  <div >
+    <div class="pull-left"><b><span th:utext="${testList.header}"></span></b></div>
+    <div class="pull-right"><a href="/">Back to profiles list</a></div>
+    <div class="clearfix"></div>
+  </div> <br/>
          <div class="panel panel-primary">
             <div class="panel-heading">
-           		<h3 class="panel-title">Mandatory</h3>
+           		<span >Mandatory</span>
             </div>
            	<div class="panel-body">        
 		        <table>
@@ -79,24 +85,22 @@
           
         
 		<!-- footer -->
-        <div id="footer" class="footer text-muted">
-            <hr />
-            <div class="pull-left">
-                <ul class="list-inline">
-                    <li>(C) 2017-2018- <a href="https://openid.net/foundation">OpenID
-                            Foundation</a></li>
-                    <li>E-mail: <a href="mailto:certification@oidf.org">certification@oidf.org</a></li>
-                    <li>Issues: <a
-                        href="https://github.com/openid-certification/oidctest/issues">Github</a>
-                    <li>
-                </ul>
-            </div>
-            <div class="pull-right">
-                <ul class="list-inline">
-                    <li>Version: <span th:text="${appVersion}"></span></li>
-                </ul>
-            </div>
-        </div> 
+		<div id="footer" class="footer text-muted">
+			<hr />
+			<div class="pull-left">
+				<ul class="list-inline">
+					<li><span th:text="${info.copyright}">copyright</span> - <a th:href="${info.orgUrl}" th:text="${info.orgName}">org</a></li>
+					<li>E-mail: <a th:href="${info.email}" th:text="${info.emailTo}">email</a></li>
+					<li>Issues: <a th:href="${info.issuesHostUrl}" th:text="${info.issuesHostName}">issues</a>
+					<li>
+				</ul>
+			</div>
+			<div class="pull-right">
+				<ul class="list-inline">
+					<li>Version: <span th:text="${info.appVersion}"></span></li>
+				</ul>
+			</div>
+		</div>
         
         <!-- post -->
     </div>

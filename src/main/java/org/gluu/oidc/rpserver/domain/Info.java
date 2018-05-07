@@ -8,6 +8,7 @@ public class Info {
 	private String orgUrl;
 	private String issuesHostName;
 	private String issuesHostUrl;
+	private String emailTo;
 	
 	public Info() {
 	}
@@ -55,11 +56,19 @@ public class Info {
 		this.issuesHostUrl = issuesHostUrl;
 	}
 
+	public String getEmailTo() {
+		return emailTo;
+	}
+
+	public void setEmailTo(String emailTo) {
+		this.emailTo = emailTo;
+	}
+
 	@Override
 	public String toString() {
 		return "Info [appVersion=" + appVersion + ", email=" + email + ", copyright=" + copyright + ", orgName="
 				+ orgName + ", orgUrl=" + orgUrl + ", issuesHostName=" + issuesHostName + ", issuesHostUrl="
-				+ issuesHostUrl + "]";
+				+ issuesHostUrl + ", emailTo=" + emailTo + "]";
 	}
 	
 }

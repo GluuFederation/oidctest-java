@@ -19,7 +19,9 @@ public abstract class BaseController {
 	private String issuesHostName;
 	@Value("${app.issues.host.url}")	
 	private String issuesHostUrl;
-				
+	@Value("${app.emailTo}")	
+	private String emailTo;	
+	
 	@ModelAttribute("info")
 	public Info getAppVersion() {
 		Info appInfo = new Info();
@@ -30,6 +32,7 @@ public abstract class BaseController {
 		appInfo.setIssuesHostUrl(issuesHostUrl);
 		appInfo.setOrgName(orgName);
 		appInfo.setOrgUrl(orgUrl);
+		appInfo.setEmailTo(emailTo);
 		
 		return appInfo;
 	}
