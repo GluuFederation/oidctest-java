@@ -19,9 +19,6 @@ public class RegistrationController extends BaseController {
     		@PathVariable("test_id") String testId,
     		@RequestBody Map<String, Object> params,
     		HttpServletResponse response) {
-    	System.out.println("Inside register()");
-    	System.out.println("clientId=" + clientId);
-    	System.out.println("testId=" + testId);
-    	System.out.println("params=" + params);
+
     }
 }
